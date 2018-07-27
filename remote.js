@@ -26,7 +26,7 @@ $(document).ready(function(){
 	} else {
 		$store.val($store.val() + dialed);
 	}
-	$store.focus();
+	//$store.focus();
 	});
 	
 	function submitCodes(codes) {
