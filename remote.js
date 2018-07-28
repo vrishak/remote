@@ -32,23 +32,25 @@ $(document).ready(function(){
 	});
 	
 	function submitCodes(codes) {
-		for (var i = 0; i < codes.length; i++) {
-			var ch = codes.charAt(i);
-			if(ch == "CH+") {
-				send(12582944);
-			} else if(ch == "CH-") {
-				send(12582945);
-			} else if(ch == "V+") {
-				send(12582928);
-			} else if(ch == "V-") {
-				send(12582929);
-			} else  if(ch == "O") {
-				send(12582924);
-			} else if(ch == "0") {
-				send(12582912);
-			} else if(parseInt(ch)) {
-				var c = 12582912;
-				send(c+parseInt(ch));
+		if(ch == "CH+") {
+			send(12582944);
+		} else if(ch == "CH-") {
+			send(12582945);
+		} else if(ch == "V+") {
+			send(12582928);
+		} else if(ch == "V-") {
+			send(12582929);
+		} else {
+			for (var i = 0; i < codes.length; i++) {
+				var ch = codes.charAt(i);
+				if(ch == "O") {
+					send(12582924);
+				} else if(ch == "0") {
+					send(12582912);
+				} else if(parseInt(ch)) {
+					var c = 12582912;
+					send(c+parseInt(ch));
+				}
 			}
 		}
 	}
