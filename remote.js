@@ -32,13 +32,13 @@ $(document).ready(function(){
 	});
 	
 	function submitCodes(codes) {
-		if(ch == "CH+") {
+		if(codes == "CH+") {
 			send(12582944);
-		} else if(ch == "CH-") {
+		} else if(codes == "CH-") {
 			send(12582945);
-		} else if(ch == "V+") {
+		} else if(codes == "V+") {
 			send(12582928);
-		} else if(ch == "V-") {
+		} else if(codes == "V-") {
 			send(12582929);
 		} else {
 			for (var i = 0; i < codes.length; i++) {
