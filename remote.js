@@ -32,6 +32,7 @@ $(document).ready(function(){
 	});
 	
 	function submitCodes(codes) {
+		console.log(codes);
 		if(codes == "CH+") {
 			send(12582944);
 		} else if(codes == "CH-") {
