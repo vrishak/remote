@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+a {
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    width: 27vw;
+    height: 23vw;
+    line-height: 24vw;
+    margin: 1%;
+    font-size: 8vw;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.container {
+    width: 100%;
+    /* margin: 50px auto; */
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #eee;
+}
+
+.call {
+    background: green;
+    color: #fff;
+    width: 87vw;
+    margin: 6%;
+}
+a:active,
+a:hover {
+  box-shadow: inset 0 0 2px #000000;
+}
+
+input {
+  background: transparent;
+  width: 90%;
+  border: 0;
+  outline: none;
+  font-size: 25px;
+  margin: 25px 0;
+  text-align: center;
+}
