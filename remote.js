@@ -20,8 +20,11 @@ $(document).ready(function(){
 	var $store = $('input'),
 			$number = $('.call'),			
 			dialed = $(this).text();
-	if(dialed == "O" || dialed == "OK" || dialed == "V+" || dialed == "V-" || dialed == "CH+" || dialed == "CH-") {
+	if(dialed == "O" || dialed == "V+" || dialed == "V-" || dialed == "CH+" || dialed == "CH-") {
 		submitCodes(dialed);
+		$store.val("");
+	} else if(dialed == "OK"){
+		submitCodes($store.val());
 		$store.val("");
 	} else if(dialed == "<<") {
 		$store.val($store.val().substring(0,$store.val().length-1));
