@@ -24,7 +24,7 @@ $(document).ready(function(){
 		submitCodes(dialed);
 		$store.val("");
 	} else if(dialed == "OK"){
-		submitCodes($store.val());
+		submitCodes($store.val()+"o");
 		$store.val("");
 	} else if(dialed == "<<") {
 		$store.val($store.val().substring(0,$store.val().length-1));
@@ -33,6 +33,12 @@ $(document).ready(function(){
 	}
 	//$store.focus();
 	});
+	
+	function sleep(seconds) 
+	{
+	  var e = new Date().getTime() + (seconds * 1000);
+	  while (new Date().getTime() <= e) {}
+	}
 	
 	function submitCodes(codes) {
 		console.log(codes);
@@ -45,8 +51,12 @@ $(document).ready(function(){
 		} else if(codes == "V-") {
 			send(12582929);
 		} else {
+			var prev = 'Z';
 			for (var i = 0; i < codes.length; i++) {
 				var ch = codes.charAt(i);
+				if(ch == prev) {
+					sleep(1);
+				}
 				if(ch == "O") {
 					send(12582924);
 				} else if(ch == "0") {
@@ -55,6 +65,7 @@ $(document).ready(function(){
 					var c = 12582912;
 					send(c+parseInt(ch));
 				}
+				prev = ch;
 			}
 		}
 	}
