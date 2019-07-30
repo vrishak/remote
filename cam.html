@@ -2,10 +2,17 @@
 <body>
 <input type="file" accept="video/*;capture=camcorder">
 <h1>Camera</h1>
-<button onclick="start()">Button</button>
-<video autoplay="true" id="videoElement">
 
-</video>
+<canvas id="out-canvas">
+    <video autoplay="true" id="videoElement">
+
+	</video>
+</canvas>
+
+
+
+<button onclick="start()">Start Camera</button>
+
 </body>
 <script>
 
