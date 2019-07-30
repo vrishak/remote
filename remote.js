@@ -1,9 +1,9 @@
 
 $(document).ready(function(){
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$("head").append("<link rel='stylesheet' href='https://rawgit.com/vrishak/remote/master/m_remote.css' type='text/css' media='screen'>");
+		$("head").append("<link rel='stylesheet' href='m_remote.css' type='text/css' media='screen'>");
     } else {
-		$("head").append("<link rel='stylesheet' href='https://rawgit.com/vrishak/remote/master/remote.css' type='text/css' media='screen'>");
+		$("head").append("<link rel='stylesheet' href='remote.css' type='text/css' media='screen'>");
 	}
 	var html = "<div class='container'>";
 	  html += "<input/>";

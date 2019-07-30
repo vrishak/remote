@@ -1,0 +1,31 @@
+<html>
+<body>
+<input type="file" accept="video/*;capture=camcorder">
+<h1>Camera</h1>
+<button onclick="start()">Button</button>
+<video autoplay="true" id="videoElement">
+
+</video>
+</body>
+<script>
+
+
+
+function start() {
+alert(navigator);
+alert(navigator.mediaDevices);
+alert(navigator.mediaDevices.getUserMedia);
+	var video = document.querySelector("#videoElement");
+	if (navigator.mediaDevices.getUserMedia) {
+	  navigator.mediaDevices.getUserMedia({ video: true })
+		.then(function (stream) {
+		  video.srcObject = stream;
+		})
+		.catch(function (err0r) {
+		  alert("Something went wrong!");
+		});
+	}
+}
+</script>
+
+</html>
