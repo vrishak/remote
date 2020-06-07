@@ -1,0 +1,98 @@
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.js"
+  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  crossorigin="anonymous"></script>
+<style>
+
+.container {
+	width:100%;
+	height:100%;
+}
+
+.left{
+	width:20%;
+	height:100%;
+	float:left;
+	    background: cadetblue;
+}
+
+.letter {
+	width: 60%;
+    height: 100%;
+    float: left;
+    font-size: 4500%;
+    color: blue;
+	text-align: center;
+}
+
+.right{
+	width:20%;
+    background: cadetblue;
+	height:100%;
+	float:right;
+}
+
+
+</style>
+
+<script>
+var l = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var i = 0;
+$(document).ready(function(e){
+
+	$("body").data("index", 0);
+
+	print(0);
+	
+	$(".left").click(function(e){
+		print(-1);
+	})
+	
+	$(".right").click(function(e){
+		print(+1);
+	})
+	
+	
+	$(".left").dblclick(function(e) { 
+		print(-1);
+		e.preventDefault();
+	});
+
+	$(".right").dblclick(function(e) { 
+		print(+1);
+		e.preventDefault();
+	});
+	
+	
+	
+	
+	
+});
+
+function print(ind) {
+	var i = $("body").data("index");
+	i+=ind;
+	debugger;
+	if(i > 25) {
+		i=0;
+	}
+	if(i<0) {
+		i=25;
+	}
+	$("body").data("index", i);
+	$(".letter").html(l[i]);
+
+}
+
+
+</script>
+
+
+
+
+<div class="container">
+  <div class="left"></div>
+  <div class="letter"></div>
+  <div class="right"></div>
+</div>
